@@ -1,0 +1,86 @@
+{
+    "_pk": "a6ee00fb-a7ce-4604-b562-c5bbf43b0e46",
+    "client": "Company",
+    "createDate" : "2021-04-21",
+    "createBy": "Jose",
+    "version": 1,
+    "actions": [
+        {
+            "id": 1,
+            "type": "start",
+            "parent": null,
+            "next": 2,
+            "description": "Your flow starts here",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 2,
+            "type": "timer",
+            "parent": 1,
+            "next": 3,
+            "description": "Timer",
+            "conditional": null,
+            "details": {
+                "type": "hour",
+                "value": 2
+            }
+        },
+        {
+            "id": 3,
+            "type": "conditional",
+            "parent": 2,
+            "next": null,
+            "description": null,
+            "conditional": [
+                4,5
+            ],
+            "details": null
+        },
+        {
+            "id": 4,
+            "type": "email",
+            "parent": 3,
+            "next": 6,
+            "description": "Send email to Segment: Prospects",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 5,
+            "type": "email",
+            "parent": 3,
+            "next": 7,
+            "description": "Send email to Segment: Clients",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 6,
+            "type": "end",
+            "parent": 4,
+            "next": null,
+            "description": "End",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 7,
+            "type": "email",
+            "parent": 5,
+            "next": 8,
+            "description": "Send email to Segment: Clients",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 8,
+            "type": "end",
+            "parent": 4,
+            "next": null,
+            "description": "End",
+            "conditional": null,
+            "details": null
+        }
+    ]    
+}
