@@ -68,7 +68,7 @@
             "id": 7,
             "type": "email",
             "parent": 5,
-            "next": 8,
+            "next": 9,
             "description": "Send email to Segment: Clients",
             "conditional": null,
             "details": null
@@ -79,6 +79,35 @@
             "parent": 4,
             "next": null,
             "description": "End",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 9,
+            "type": "conditional",
+            "parent": 2,
+            "next": null,
+            "description": null,
+            "conditional": [
+                10,11
+            ],
+            "details": null
+        },
+        {
+            "id": 10,
+            "type": "email",
+            "parent": 9,
+            "next": null,
+            "description": "Send email to Segment: Clients",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 11,
+            "type": "email",
+            "parent": 9,
+            "next": null,
+            "description": "Send email to Segment: Clients",
             "conditional": null,
             "details": null
         }
