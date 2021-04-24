@@ -1,71 +1,18 @@
-<ng-template #content let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title" id="modal-basic-title">Create new item</h4>
-      <button
-        type="button"
-        class="close"
-        aria-label="Close"
-        (click)="modal.dismiss('Cross click')"
-      >
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-    <div class="modal-body">
-      <div class="text-center">
-        <p class="mb-3">
-          Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-          dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-          consectetur ac, vestibulum at eros.
-        </p>
-        <p class="mb-3">
-          Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-          Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.
-        </p>
+<a href="#">
+  <div class="box">
+    <div class="start">
+      <div class="start-title">
+        <b>Timer</b> - {{ action.id }}
+        <br />
+        {{ action.type }}
+      </div>
+      <div class="start-content">
+        <small>{{ action.description }}</small>
       </div>
     </div>
-    <div class="modal-footer">
-      <button
-        type="button"
-        class="btn btn-success"        
-      >
-        Save
-      </button>
-    </div>
-  </ng-template>
-  
-  <a href="#">
-    <div class="box">
-      <div class="start">
-        <div class="start-title">
-          <b>Timer</b> - {{ action.id }}
-          <br />
-          {{ action.type }}
-        </div>
-        <div class="start-content">
-          <small>{{ action.description }}</small>
-        </div>
-      </div>
-    </div>
-  </a>
-  <a href="#">
-    <div class="pointer">
-      <span class="addnewicon" data-blockid="24" data-direction="-1">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="22"
-          height="22"
-          fill="currentColor"
-          class="bi bi-plus"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"
-          />
-        </svg>
-      </span>
-    </div>
-  </a>
-  <div class="wrap-content">
-    <ng-template #mainTemplate></ng-template>
   </div>
-  
+</a>
+<app-new-action></app-new-action>
+<div class="wrap-content">
+  <ng-template #mainTemplate></ng-template>
+</div>
