@@ -1,4 +1,6 @@
 import { ComponentFactoryResolver, Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
+
 import * as workflowData from '../../assets/data/workflow-data.json';
 import { IAction } from '../models/workflow/action';
 import { IWorkflow } from '../models/workflow/workflow';
@@ -12,17 +14,36 @@ import { ActionTimerComponent } from '../workflow/workflow/action-timer/action-t
   providedIn: 'root'
 })
 export class WorkflowServices {
+  private workFlow = new Subject<IWorkflow>();
+  private updateWorkFlow = new Subject<any>();
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
   ) { }
 
-  getWorkFlow(): IWorkflow {
+  getWorkFlowFromDB(): IWorkflow {
     let json = JSON.stringify(workflowData);
     json = json.replace('{"default":', '');
     json = json.slice(0, -1);
     let obj: IWorkflow = JSON.parse(json);
+    this.workFlow.next(obj);
     return obj;
+  }
+
+  setWorkFlow(workFlow: IWorkflow) {
+    this.workFlow.next(workFlow);
+  }
+
+  getWorkFlow(): Observable<IWorkflow> {
+    return this.workFlow.asObservable();
+  }
+
+  setUpdateWorkFlowScreen(value: any) {
+    this.updateWorkFlow.next(value);
+  }
+
+  getUpdateWorkFlowScreen(): Observable<any> {
+    return this.updateWorkFlow.asObservable();
   }
 
   getWorkFlowAction(workFlow: IWorkflow, id: number): IAction {
@@ -45,12 +66,35 @@ export class WorkflowServices {
       return obj;
   }
 
-  createElement(action: IAction, formRef: any, workFlowData: IWorkflow) {
+  addAction(workflow: IWorkflow, currentAction: IAction, newAction: IAction) {
+    // set id
+    let maxId = Math.max.apply(Math, workflow.actions.map(function(a) { return a.id}));
+    newAction.id = maxId + 1;
+
+    // get parent index
+    let parentIndex = workflow.actions.indexOf(currentAction);
+  
+    // get next Action
+    let nextIndex!: number;
+    if (newAction.next) {
+      let nextAction = this.getWorkFlowAction(workflow, newAction.next);
+      nextIndex = workflow.actions.indexOf(nextAction);
+      workflow.actions[nextIndex].parent = newAction.id;
+    }
+
+    // update workflow
+    workflow.actions[parentIndex].next = newAction.id;    
+    workflow.actions.push(newAction);
+    this.setWorkFlow(workflow);    
+  }
+
+  createElement(action: IAction, formRef: any, workFlowData: IWorkflow): any {
     switch (action.type) {
        case 'start':
          const start = this.createInstance(ActionStartComponent, formRef);
          start.instance.workFlowData = workFlowData;
          start.instance.action = action;
+         return start;
          break;
       case 'timer':
         const timer = this.createInstance(ActionTimerComponent, formRef);

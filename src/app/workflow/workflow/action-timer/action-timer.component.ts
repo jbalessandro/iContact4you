@@ -27,5 +27,4 @@ export class ActionTimerComponent implements OnInit {
       this.workflowServices.createElement(action, this.formRef, this.workFlowData);  
     }
   }
-
 }

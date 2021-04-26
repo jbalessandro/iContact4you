@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import { IAction } from 'src/app/models/workflow/action';
+import { IWorkflow } from 'src/app/models/workflow/workflow';
+import { WorkflowServices } from 'src/app/services/workflow-services.ts.service';
 
 @Component({
   selector: 'app-new-action',
@@ -7,19 +10,22 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
   styleUrls: ['./new-action.component.scss']
 })
 export class NewActionComponent implements OnInit {
+  @Input() action!: IAction;
+  @Input() workFlowData!: IWorkflow;
   title = 'Select one action';
   closeResult: string = '';
   actionOptions = true;
-  actionTimer = false;  
+  actionTimer = false;
   
-  constructor(private modalService: NgbModal) { }
+  constructor(private modalService: NgbModal, private workflowServices: WorkflowServices) { }
 
   ngOnInit(): void {
-    this.title = 'Select one acton';
+    this.title = 'Select one action';
   }
 
   open(content:any) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title', size:'lg', backdrop: 'static'}).result.then((result) => {
+      this.selectAction('reset');
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
@@ -39,8 +45,8 @@ export class NewActionComponent implements OnInit {
   selectAction(action:string): void {
     this.actionOptions = false;
     this.actionTimer = false;
-
-    if (action){
+    
+    if (action && action != 'reset'){
       if (action == 'timer') {
         this.actionTimer = true;
         this.title = 'Add timer';
@@ -48,6 +54,15 @@ export class NewActionComponent implements OnInit {
     } else {
       this.actionOptions = true;
       this.title = 'Select one action';
+    }
+  }
+
+  responseAction(action:string) {
+    if (action == 'saved'){
+      this.workflowServices.setUpdateWorkFlowScreen(new Date());
+      this.modalService.dismissAll();
+    } else if (action == 'close') {
+      this.modalService.dismissAll();
     }
   }
 }

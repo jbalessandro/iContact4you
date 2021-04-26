@@ -1,1 +1,21 @@
-<p>new-action-timer works!</p>
+<form>
+    <div class="row mt-3">
+    <div class="col-md-8">
+        <div class="form-group">
+            <label>Choose an interval:</label>
+            <select class="form-control">
+                <option [value]="interval" *ngFor="let item of intervals">{{item}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="form-group">
+            <label>Quantity:</label>
+            <input type="text" class="form-control" [value]="quantity">
+        </div>
+    </div>
+    <div class="col-md-12 mt-3 text-right">
+        <button type="button" class="btn btn-outline-dark" (click)="addTimer()">Save</button>
+    </div>
+</div>
+</form>
