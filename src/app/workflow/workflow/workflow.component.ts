@@ -15,6 +15,7 @@ export class WorkflowComponent implements OnInit, OnDestroy {
   updateWorkFlow: Subscription;
   workFlowData!: IWorkflow;
   action!: IAction;
+  components:any = [];
 
   constructor(    
     public viewContainerRef: ViewContainerRef,
@@ -27,6 +28,7 @@ export class WorkflowComponent implements OnInit, OnDestroy {
     });
     this.updateWorkFlow = this.workflowServices.getUpdateWorkFlowScreen().subscribe(message => {
       debugger;
+      this.removeElement();
       this.createWorkFlow();
     })
   }
@@ -47,7 +49,13 @@ export class WorkflowComponent implements OnInit, OnDestroy {
   }
   
   createElement(action: IAction) {
-    this.workflowServices.createElement(action, this.formRef, this.workFlowData);
+    const newComponent = this.workflowServices.createElement(action, this.formRef, this.workFlowData);
+    this.components.push(newComponent);
+  }
+
+  removeElement() {
+    var component = this.components[0];
+    this.workflowServices.removeComponent(component, this.formRef);
   }
 
   ngOnDestroy() {
