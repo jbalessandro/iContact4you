@@ -13,6 +13,7 @@ import { NewActionComponent } from './workflow/new-action/new-action.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NewActionTimerComponent } from './workflow/new-action/new-action-timer/new-action-timer.component';
 import { NewActionOptionComponent } from './workflow/new-action/new-action-option/new-action-option.component';
+import { RemoveActionComponent } from './workflow/remove-action/remove-action.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NewActionOptionComponent } from './workflow/new-action/new-action-optio
     ActionEndComponent,
     NewActionComponent,
     NewActionTimerComponent,
-    NewActionOptionComponent
+    NewActionOptionComponent,
+    RemoveActionComponent
   ],
   imports: [
     BrowserModule,

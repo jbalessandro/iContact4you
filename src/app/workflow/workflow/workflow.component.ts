@@ -27,10 +27,9 @@ export class WorkflowComponent implements OnInit, OnDestroy {
       }
     });
     this.updateWorkFlow = this.workflowServices.getUpdateWorkFlowScreen().subscribe(message => {
-      debugger;
-      this.removeElement();
+      this.removeMainComponent();
       this.createWorkFlow();
-    })
+    });
   }
 
   ngOnInit(): void {
@@ -53,9 +52,9 @@ export class WorkflowComponent implements OnInit, OnDestroy {
     this.components.push(newComponent);
   }
 
-  removeElement() {
+  removeMainComponent() {
     var component = this.components[0];
-    this.workflowServices.removeComponent(component, this.formRef);
+    this.workflowServices.removeMainComponent(component, this.formRef);
   }
 
   ngOnDestroy() {

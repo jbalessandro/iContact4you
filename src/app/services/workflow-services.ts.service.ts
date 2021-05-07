@@ -89,6 +89,30 @@ export class WorkflowServices {
     this.setWorkFlow(workflow);    
   }
 
+  removeAction(workflow: IWorkflow, currentAction: IAction) {
+    if (currentAction.parent) {
+      const parent = this.getWorkFlowAction(workflow, currentAction.parent);
+      if (parent.id != 0) {
+        const parentIndex = workflow.actions.indexOf(parent);
+        workflow.actions[parentIndex].next = currentAction.next;
+      }
+    }
+
+    if (currentAction.next) {
+      const next = this.getWorkFlowAction(workflow, currentAction.next);
+      if (next.id != 0) {
+        const nextIndex = workflow.actions.indexOf(next);
+        workflow.actions[nextIndex].parent = currentAction.parent;
+      }
+    }
+
+    const currentIndex = workflow.actions.indexOf(currentAction);
+    if (currentIndex != 0) {
+      workflow.actions.splice(currentIndex, 1);
+      this.setWorkFlow(workflow);
+    }
+  }
+
   createElement(action: IAction, formRef: any, workFlowData: IWorkflow): any {
     switch (action.type) {
        case 'start':
@@ -124,8 +148,7 @@ export class WorkflowServices {
     return formRef.createComponent(newComponent);
   }
 
-  removeComponent(componentClass: Type<any>, formRef: any) {
-    debugger;
+  removeMainComponent(componentClass: Type<any>, formRef: any) {
     formRef.remove(0);
     this.components.splice(0,1);
   }

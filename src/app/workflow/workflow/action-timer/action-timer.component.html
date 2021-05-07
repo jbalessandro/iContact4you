@@ -1,4 +1,4 @@
-<a href="#">
+<a>
   <div class="box">
     <div class="start">
       <div class="start-title">
@@ -9,10 +9,12 @@
       <div class="start-content">
         <small>{{ action.description }}</small>
       </div>
+      <!-- <div class="text-right text-danger" (click)="confirmRemove()">remove</div> -->
     </div>
   </div>
 </a>
 <app-new-action [action]="action" [workFlowData]="workFlowData"></app-new-action>
+<app-remove-action [action]="action" [workFlowData]="workFlowData"></app-remove-action>
 <div class="wrap-content">
   <ng-template #mainTemplate></ng-template>
 </div>
