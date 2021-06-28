@@ -1,64 +1,45 @@
-<!-- <div
-  class="modal fade"
-  tabindex="-1"
-  role="dialog"
-  aria-modal="true"
-  id="exampleModal"
-  tabindex="-1"
-  aria-labelledby="exampleModalLabel"
-  aria-hidden="true"
->
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="customModalLabel">Modal Title</h5>
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
+<div class="container">
+  <div class="box" [style]="getBoxSettings()">
+    <div class="title text-gray">
+      <span>DECISION</span>
+    </div>
+    <!-- <div class="content">
+      <small>action.description</small>
+    </div> -->
+  </div>
+
+  <div class="pb">
+    <div class="plumbing left">
+      <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path style="stroke: #9298AD;" d="M 0,100 C 0,0 100,100 100,0"></path>
+      </svg>
+      <div style="position: relative; left:-130px; top: -4px;">
+        <span style="border: 1px solid #EA4335;border-radius: 5px;padding: 2px;color: #EA4335;display: block;text-align: center;margin: 0px 40% 20px;">NO</span>
+        <ng-template #conditionalTemplateLeft></ng-template>
       </div>
-      <div class="modal-body">
-        <div class="text-center">
-          <p class="mb-3">
-            Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-            dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
-            ac consectetur ac, vestibulum at eros.
-          </p>
-          <p class="mb-3">
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-            Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
-            auctor.
-          </p>
-        </div>
-      </div>
-      <div class="modal-footer custom">
-        <div class="left-side">
-          <button
-            type="button"
-            class="btn btn-link danger"
-            data-dismiss="modal"
-          >
-            Cancel
-          </button>
-        </div>
-        <div class="divider"></div>
-        <div class="right-side">
-          <button type="button" class="btn btn-link success">Save</button>
-        </div>
+    </div>
+  
+    <div class="plumbing right">
+      <svg width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path style="stroke: var(--border-gray);" d="M 100,100 C 100,0 0,100 0,0"></path>
+      </svg>
+      <div style="position: relative; right:-130px; top: -4px;">
+        <span style="border: 1px solid var(--border-gray);border-radius: 5px;padding: 2px;color: var(--border-gray);display: block;text-align: center;margin: 0px 40% 20px;">YES</span>
+        <ng-template #conditionalTemplateRight></ng-template>
       </div>
     </div>
   </div>
-</div> -->
 
-<div class="row" style="width:1050px;">
-  <div class="col-lg-6" style="position: fixed; left:15%;">
+
+<!-- </div>
+
+<div> -->
+  <!-- <div style="position: absolute; left:30%;">
+    <span style="border: 1px solid #EA4335;border-radius: 5px;padding: 2px;color: #EA4335;display: block;text-align: center;margin: 0px 40% 20px;">NO</span>
     <ng-template #conditionalTemplateLeft></ng-template>
   </div>
-  <div class="col-lg-6" style="position: fixed; left: 55%;">
+  <div style="position: absolute; right: 30%;">
+    <span style="border: 1px solid var(--border-gray);border-radius: 5px;padding: 2px;color: var(--border-gray);display: block;text-align: center;margin: 0px 40% 20px;">YES</span>
     <ng-template #conditionalTemplateRight></ng-template>
-  </div>
+  </div> -->
 </div>

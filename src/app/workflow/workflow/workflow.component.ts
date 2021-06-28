@@ -11,22 +11,24 @@ import { WorkflowServices } from 'src/app/services/workflow-services.ts.service'
 export class WorkflowComponent implements OnInit, AfterViewInit {
   @ViewChild('mainTemplate', { read: ViewContainerRef, static: true }) formRef: any;
   workFlowData!: IWorkflow;
-  
-  constructor(    
+
+  zoom: number = 1;
+
+  constructor(
     public viewContainerRef: ViewContainerRef,
     private workflowServices: WorkflowServices
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getWorkFlow();
   }
-
+  
   ngAfterViewInit(): void {
 
   }
 
   getWorkFlow(): void {
-    this.workFlowData = this.workflowServices.getWorkFlow();    
+    this.workFlowData = this.workflowServices.getWorkFlow();
     this.createWorkFlow();
   }
 
@@ -34,7 +36,7 @@ export class WorkflowComponent implements OnInit, AfterViewInit {
     let action = this.workflowServices.getWorkFlowAction(this.workFlowData, this.workFlowData.actions[0].id);
     this.createElement(action);
   }
-  
+
   createElement(action: IAction) {
     this.workflowServices.createElement(action, this.formRef, this.workFlowData);
   }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { IAction } from 'src/app/models/workflow/action';
 import { IWorkflow } from 'src/app/models/workflow/workflow';
 import { WorkflowServices } from 'src/app/services/workflow-services.ts.service';
@@ -8,7 +8,7 @@ import { WorkflowServices } from 'src/app/services/workflow-services.ts.service'
   templateUrl: './action-start.component.html',
   styleUrls: ['./action-start.component.scss']
 })
-export class ActionStartComponent implements OnInit {
+export class ActionStartComponent implements OnInit, AfterViewInit {
   @Input() workFlowData!: IWorkflow;
   @Input() action!: IAction;
   @ViewChild('mainTemplate', { read: ViewContainerRef, static: true }) formRef: any;
@@ -19,6 +19,10 @@ export class ActionStartComponent implements OnInit {
 
   ngOnInit(): void {
     this.createWorkFlow();
+  }
+
+  ngAfterViewInit(){
+    
   }
 
   createWorkFlow(): void {

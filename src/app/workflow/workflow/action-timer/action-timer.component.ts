@@ -11,11 +11,16 @@ import { WorkflowServices } from 'src/app/services/workflow-services.ts.service'
 export class ActionTimerComponent implements OnInit {
   @Input() workFlowData!: IWorkflow;
   @Input() action!: IAction;
+  @Input() newstyle: string = '';
   @ViewChild('mainTemplate', { read: ViewContainerRef, static: true }) formRef: any;
   
   constructor(
     private workflowServices: WorkflowServices
   ) { }
+
+  getBoxSettings(){
+    return this.newstyle;
+  }
 
   ngOnInit(): void {
     this.createWorkFlow();
@@ -27,5 +32,4 @@ export class ActionTimerComponent implements OnInit {
       this.workflowServices.createElement(action, this.formRef, this.workFlowData);  
     }
   }
-
 }

@@ -69,6 +69,7 @@ export class WorkflowServices {
       case 'conditional':
         const conditional = this.createInstance(ActionConditionalComponent, formRef);
         conditional.instance.workFlowData = workFlowData;
+        conditional.instance.newstyle = 'margin-top:100px;';
         conditional.instance.action = action;
         break;
     }

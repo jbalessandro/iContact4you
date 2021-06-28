@@ -1,21 +1,56 @@
-.container {
-  display: block;
+.container{
   position: relative;
-  margin: 8% auto;
-  width: 600px;
-  height: 400px;
-  overflow: hidden;
+  // border: 1px solid red;
+  width: auto;
+}
+
+.box {
+  width: max-content;
+  margin: auto 50%;
+  transform: translate(-50%);
+  background: #fff!important;
+  border: 2px solid #dae2f1!important;
+  color: var(--color)!important;
+  border-radius: 10px!important;
+  outline: none!important;
+  padding: 14px 16px;
+  box-shadow: 0 1px 4px 2px var(--border-box);
+  position: static;
+  ::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 50%;
+    height: 36px;
+    width: 0;
+    top: calc(100% - 84px);
+    border-right: 1px solid var(--border-gray);
+    border-left: 0 !important;
+  }
+  .title{
+    font-size: 16px;
+    text-transform: uppercase;
+  }
+  .content{
+    font-size: 14px;
+    color: var(--text-lightGray);
+    text-transform: uppercase;
+  }
+}
+
+.text-gray {
+  color: var(--text-gray);
 }
 
 .pointer {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  margin-top: 80px;
+  margin-top: 35px;
 }
 
 .addnewicon {
-  margin-left: 2px;
+  margin-left: 1px;
   box-sizing: border-box;
   position: relative;
   display: inline-block;
@@ -23,36 +58,35 @@
   height: 30px;
   line-height: 26px;
   border-radius: 50%;
-  font-size: 8px;
-  color: var(--slate-550);
   text-align: center;
-  background: #fff;
-  border: 2px solid var(--slate-300);
+  border: 2px solid var(--border-gray)!important;
   -webkit-box-shadow: 0 4px 4px 0 rgb(0 0 0 / 13%);
-  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 13%);
+  box-shadow: 0 1px 4px 2px var(--border-box);
+  // box-shadow: 0 1px 4px 2px rgb(218 226 241 / 66%);
   cursor: pointer;
 }
 
-.box {
+.pb {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
   position: relative;
-  width: 300px;
-  background-color: #f7f9ff;
-  border: 2px dashed #4e5468;
-  border-radius: 6px;
-  padding: 1rem;
-  font-size: 15px;
-  margin: auto 50%;
-  margin-top: 135px;
-  transform: translate(-50%);
-  ::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 50%;
-    height: 95px;
-    width: 0;
-    top: calc(100% + 2px);
-    border-right: 2px solid var(--slate-300);
-    border-left: 0 !important;
+}
+.plumbing {
+    height: 74px;
+    width: 260px;
+    top: 0;
+    position: relative;
+    .left {
+    //right: 50%;
+  }
+  .right {
+    //left: 50%;
+  }
+  svg path {
+    vector-effect: non-scaling-stroke;
+    fill: none;
+    stroke-width: 1;
   }
 }

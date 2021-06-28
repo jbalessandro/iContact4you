@@ -41,7 +41,7 @@
             "id": 4,
             "type": "email",
             "parent": 3,
-            "next": 15,
+            "next": 6,
             "description": "Send email to Segment: Prospects",
             "conditional": null,
             "details": null
@@ -50,7 +50,7 @@
             "id": 5,
             "type": "email",
             "parent": 3,
-            "next": 9,
+            "next": 7,
             "description": "Send email to Segment: Clients",
             "conditional": null,
             "details": null
@@ -97,7 +97,7 @@
             "id": 10,
             "type": "email",
             "parent": 9,
-            "next": 14,
+            "next": null,
             "description": "Send email to Segment: Clients",
             "conditional": null,
             "details": null
@@ -106,71 +106,6 @@
             "id": 11,
             "type": "email",
             "parent": 9,
-            "next": 12,
-            "description": "Send email to Segment: Clients",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 12,
-            "type": "timer",
-            "parent": 11,
-            "next": 13,
-            "description": "Send email to Segment: Clients1",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 13,
-            "type": "end",
-            "parent": 12,
-            "next": null,
-            "description": "End",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 14,
-            "type": "end",
-            "parent": 12,
-            "next": null,
-            "description": "End",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 15,
-            "type": "timer",
-            "parent": 4,
-            "next": 16,
-            "description": "Send email to Segment: Clients1",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 16,
-            "type": "conditional",
-            "parent": 15,
-            "next": null,
-            "description":null,
-            "conditional": [
-                17,18
-            ],
-            "details": null
-        },
-        {
-            "id": 17,
-            "type": "email",
-            "parent": 16,
-            "next": null,
-            "description": "Send email to Segment: Clients",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 18,
-            "type": "email",
-            "parent": 16,
             "next": null,
             "description": "Send email to Segment: Clients",
             "conditional": null,

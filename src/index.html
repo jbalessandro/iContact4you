@@ -1,13 +1,51 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>Icontact4you</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- <link rel="stylesheet" href="../assets/css/dark-template.css" /> -->
+  <!-- <link rel="stylesheet" href="../assets/css/light-template.css" /> -->
+  <style>
+    :root {
+      --background: #343A40;
+      --secondary-background: #fff;
+      /* --bg-lightGray: #fff; */
+      --bg-lightGray: #1E2026;
+      --color: #ADB5BD;
+      --bg-mainBlue:#dfebff;
+      --border: #495057;
+      --text-gray: #7e96b8;
+      --text-blue:#59f;
+      --blackBlue:#191f2a;
+      --border-gray: #19CCA3;
+      --text-lightGray: #9cacc2;
+      --border-box:rgb(218 226 241 / 66%);
+      --border-box:none;
+      transform: scale(0.8);
+    }
+
+    body {
+      background-color: var(--bg-lightGray);
+      color: var(--color);
+    }
+
+    .main-panel {
+      box-sizing: border-box;
+      position: relative;
+    }
+  </style>
+
 </head>
+
 <body>
-  <app-root></app-root>
+  <div class="main-panel">
+    <app-root></app-root>
+  </div>
 </body>
+
 </html>

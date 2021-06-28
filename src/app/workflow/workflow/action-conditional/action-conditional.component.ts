@@ -13,15 +13,19 @@ export class ActionConditionalComponent implements OnInit {
   @ViewChild('conditionalTemplateRight', { read: ViewContainerRef, static: true }) formRefRight: any;
   @Input() workFlowData!: IWorkflow;
   @Input() action!: IAction;
+  @Input() newstyle: string = '';
   
   constructor(
     private workflowServices: WorkflowServices
   ) { }
 
+  getBoxSettings(){
+    return this.newstyle;
+  }
   ngOnInit(): void {
     this.createWorkFlow();
   }
-
+  
   ngAfterViewInit(): void {
   }
 

@@ -1,67 +1,32 @@
-.wrap-content {
-    color: #212529;
+.wrap-content{
     position: relative;
-    width: max-content;
-    margin: auto 50%;
-    transform: translate(-50%);
-    padding: 1rem;
-}
-.container {
-  display: block;
-  position: relative;
-  margin: 8% auto;
-  width: 600px;
-  height: 400px;
-  overflow: hidden;
-}
+    width: 90%;
+    background-color: var(--secondary-background);
+    border-radius: 10px;
+    float: right;
+    padding: 32px 0 20px!important;
+    min-height: 85vh;
+    margin-top: 5vh;
+    box-shadow: 0 5px 20px rgba(47,138,245,.25)!important;
+    .zoom-content{
+        display: block;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+        transform: scale(0.8);
+    }
 
-.pointer {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 55px;
+    .button-zoom {
+        display: block;
+        margin:5px;
+        background: var(--bg-mainBlue);
+        color: var(--text-blue);
+        padding: 0;
+        min-width: 0;
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        line-height: 40px;
+        border-radius: 50%;
+    }
 }
-
-.addnewicon {
-  margin-left: 2px;
-  box-sizing: border-box;
-  position: relative;
-  display: inline-block;
-  width: 29px;
-  height: 30px;
-  line-height: 26px;
-  border-radius: 50%;
-  font-size: 8px;
-  color: var(--slate-550);
-  text-align: center;
-  background: #fff;
-  border: 2px solid var(--slate-300);
-  -webkit-box-shadow: 0 4px 4px 0 rgb(0 0 0 / 13%);
-  box-shadow: 0 4px 4px 0 rgb(0 0 0 / 13%);
-  cursor: pointer;
-}
-
-.box {
-  position: relative;
-  width: 300px;
-  background-color: #f7f9ff;
-  border: 2px dashed #4e5468;
-  border-radius: 6px;
-  padding: 1rem;
-  font-size: 15px;
-  margin: auto 50%;
-  margin-top: 135px;
-  transform: translate(-50%);
-  ::after {
-    content: "";
-    display: block;
-    position: absolute;
-    left: 50%;
-    height: 95px;
-    width: 0;
-    top: calc(100% + 2px);
-    border-right: 2px solid var(--slate-300);
-    border-left: 0 !important;
-  }
-}
-  
