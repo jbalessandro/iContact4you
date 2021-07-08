@@ -9,27 +9,15 @@
             "id": 1,
             "type": "start",
             "parent": null,
-            "next": 2,
-            "description": "Your flow starts here",
+            "next": 3,
+            "description": "1",
             "conditional": null,
             "details": null
         },
         {
-            "id": 2,
-            "type": "timer",
-            "parent": 1,
-            "next": 3,
-            "description": "Timer",
-            "conditional": null,
-            "details": {
-                "type": "hour",
-                "value": 2
-            }
-        },
-        {
             "id": 3,
             "type": "conditional",
-            "parent": 2,
+            "parent": 1,
             "next": null,
             "description": null,
             "conditional": [
@@ -39,120 +27,134 @@
         },
         {
             "id": 4,
-            "type": "email",
+            "type": "timer",
             "parent": 3,
-            "next": 15,
-            "description": "Send email to Segment: Prospects",
+            "next": 6,
+            "description": "4",
             "conditional": null,
             "details": null
         },
         {
             "id": 5,
-            "type": "email",
+            "type": "timer",
             "parent": 3,
-            "next": 9,
-            "description": "Send email to Segment: Clients",
+            "next": 7,
+            "description": "5",
             "conditional": null,
             "details": null
         },
         {
             "id": 6,
-            "type": "end",
+            "type": "timer",
             "parent": 4,
-            "next": null,
-            "description": "End",
+            "next": 16,
+            "description": "6",
             "conditional": null,
             "details": null
         },
         {
             "id": 7,
-            "type": "email",
+            "type": "conditional",
             "parent": 5,
-            "next": 9,
-            "description": "Send email to Segment: Clients",
-            "conditional": null,
+            "next": null,
+            "description": null,
+            "conditional": [
+                8,9
+            ],
             "details": null
         },
         {
             "id": 8,
-            "type": "end",
-            "parent": 4,
-            "next": null,
-            "description": "End",
+            "type": "timer",
+            "parent": 7,
+            "next": 10,
+            "description": "8",
             "conditional": null,
             "details": null
         },
         {
             "id": 9,
+            "type": "timer",
+            "parent": 7,
+            "next": 13,
+            "description": "9",
+            "conditional": null,
+            "details": null
+        }
+
+
+        ,
+        {
+            "id": 10,
             "type": "conditional",
-            "parent": 2,
+            "parent": 8,
             "next": null,
             "description": null,
             "conditional": [
-                10,11
+                11,12
             ],
             "details": null
         },
         {
-            "id": 10,
-            "type": "email",
-            "parent": 9,
-            "next": 14,
-            "description": "Send email to Segment: Clients",
-            "conditional": null,
-            "details": null
-        },
-        {
             "id": 11,
-            "type": "email",
-            "parent": 9,
-            "next": 12,
-            "description": "Send email to Segment: Clients",
+            "type": "timer",
+            "parent": 10,
+            "next": 25,
+            "description": "11",
             "conditional": null,
             "details": null
         },
         {
             "id": 12,
             "type": "timer",
-            "parent": 11,
-            "next": 13,
-            "description": "Send email to Segment: Clients1",
+            "parent": 10,
+            "next": null,
+            "description": "12",
             "conditional": null,
             "details": null
-        },
+        }
+
+        
+        ,
         {
             "id": 13,
-            "type": "end",
-            "parent": 12,
+            "type": "conditional",
+            "parent": 9,
             "next": null,
-            "description": "End",
-            "conditional": null,
+            "description": null,
+            "conditional": [
+                14,15
+            ],
             "details": null
         },
         {
             "id": 14,
-            "type": "end",
-            "parent": 12,
+            "type": "timer",
+            "parent": 13,
             "next": null,
-            "description": "End",
+            "description": "14",
             "conditional": null,
             "details": null
         },
         {
             "id": 15,
             "type": "timer",
-            "parent": 4,
-            "next": 16,
-            "description": "Send email to Segment: Clients1",
+            "parent": 13,
+            "next": null,
+            "description": "15",
             "conditional": null,
             "details": null
-        },
+        }
+
+
+        
+        ,
         {
             "id": 16,
             "type": "conditional",
-            "parent": 15,
+            "parent": 6,
             "next": null,
-            "description":null,
+            "description": null,
             "conditional": [
                 17,18
             ],
@@ -160,21 +162,119 @@
         },
         {
             "id": 17,
-            "type": "email",
+            "type": "timer",
             "parent": 16,
             "next": null,
-            "description": "Send email to Segment: Clients",
+            "description": "17",
             "conditional": null,
             "details": null
         },
         {
             "id": 18,
-            "type": "email",
+            "type": "timer",
             "parent": 16,
-            "next": null,
-            "description": "Send email to Segment: Clients",
+            "next": 19,
+            "description": "18",
             "conditional": null,
             "details": null
         }
+
+        
+        
+        ,
+        {
+            "id": 19,
+            "type": "conditional",
+            "parent": 18,
+            "next": null,
+            "description": null,
+            "conditional": [
+                20,21
+            ],
+            "details": null
+        },
+        {
+            "id": 20,
+            "type": "timer",
+            "parent": 19,
+            "next": null,
+            "description": "20",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 21,
+            "type": "timer",
+            "parent": 19,
+            "next": 22,
+            "description": "20",
+            "conditional": null,
+            "details": null
+        }
+
+        
+        ,
+        {
+            "id": 22,
+            "type": "conditional",
+            "parent": 21,
+            "next": null,
+            "description": null,
+            "conditional": [
+                23,24
+            ],
+            "details": null
+        },
+        {
+            "id": 23,
+            "type": "timer",
+            "parent": 22,
+            "next": null,
+            "description": "20",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 24,
+            "type": "timer",
+            "parent": 22,
+            "next": null,
+            "description": "20",
+            "conditional": null,
+            "details": null
+        }
+
+
+        ,
+        {
+            "id": 25,
+            "type": "conditional",
+            "parent": 17,
+            "next": null,
+            "description": null,
+            "conditional": [
+                26,27
+            ],
+            "details": null
+        },
+        {
+            "id": 26,
+            "type": "timer",
+            "parent": 25,
+            "next": null,
+            "description": "26",
+            "conditional": null,
+            "details": null
+        },
+        {
+            "id": 27,
+            "type": "timer",
+            "parent": 25,
+            "next": null,
+            "description": "27",
+            "conditional": null,
+            "details": null
+        }
+
     ]    
 }
