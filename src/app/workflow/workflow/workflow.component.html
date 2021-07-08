@@ -1,28 +1,28 @@
-<!-- <div class="wrap-content">
+<div id="content-wrapper" class="content-wrapper">
+  <app-header></app-header>
 
-<div class="zoom-content">
-        <a href="#" class="button-zoom" (click)="zoomIn()">
-            <span class="addnewicon">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="var(--text-blue)" viewBox="0 0 16 16"
-                    style="margin: 4px;">
-                    <path
-                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z">
-                    </path>
-                </svg></span>
-        </a>
-        <a href="#" class="button-zoom" (click)="zoomOut()">
-            <span class="addnewicon">
-                <svg style="margin: 11px;width: 17px;height: 19px;" fill="var(--text-blue)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                    <path
-                        d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z">
-                    </path>
-                </svg>
-            </span>
-        </a>
-    </div>
-
-</div> -->
-<div class="content">
+  <div id="flow" class="flow" [ngStyle]="{ transform: 'scale(' + zoom + ')' }">
     <ng-template #mainTemplate></ng-template>
-</div>
+  </div>
 
+  <div
+    class="border p-3 card"
+    style="position: fixed; bottom: 32px; right: 39px; width: 20%; opacity: 0.5"
+  >
+    <div class="progress progress-lg">
+      <input
+        type="range"
+        value="8"
+        max="20"
+        min="2"
+        (input)="alteraZoom($event)"
+        class="progress-bar"
+        role="progressbar"
+        style="width: 100%"
+        aria-valuenow="25"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      />
+    </div>
+  </div>
+</div>

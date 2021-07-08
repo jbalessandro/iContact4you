@@ -4,13 +4,14 @@
     "createDate" : "2021-04-21",
     "createBy": "Jose",
     "version": 1,
+    "ifs":7,
     "actions": [
         {
             "id": 1,
             "type": "start",
             "parent": null,
             "next": 3,
-            "description": "1",
+            "description": "Aqui se inicia esse item aqui, vamos testar...",
             "conditional": null,
             "details": null
         },
@@ -30,7 +31,7 @@
             "type": "timer",
             "parent": 3,
             "next": 6,
-            "description": "4",
+            "description": "Aqui vamos esperar um pouco pra enviar o email",
             "conditional": null,
             "details": null
         },
@@ -39,7 +40,7 @@
             "type": "timer",
             "parent": 3,
             "next": 7,
-            "description": "5",
+            "description": "Aqui vamos ",
             "conditional": null,
             "details": null
         },
@@ -48,7 +49,7 @@
             "type": "timer",
             "parent": 4,
             "next": 16,
-            "description": "6",
+            "description": "Aqui vamos esperar um pouco pra enviar o email",
             "conditional": null,
             "details": null
         },
@@ -68,7 +69,7 @@
             "type": "timer",
             "parent": 7,
             "next": 10,
-            "description": "8",
+            "description": "Aqui vamos esperar um pouco pra enviar o email",
             "conditional": null,
             "details": null
         },
@@ -77,204 +78,16 @@
             "type": "timer",
             "parent": 7,
             "next": 13,
-            "description": "9",
+            "description": "Aqui vamos esperar um pouco pra enviar o email",
             "conditional": null,
             "details": null
         }
 
 
-        ,
-        {
-            "id": 10,
-            "type": "conditional",
-            "parent": 8,
-            "next": null,
-            "description": null,
-            "conditional": [
-                11,12
-            ],
-            "details": null
-        },
-        {
-            "id": 11,
-            "type": "timer",
-            "parent": 10,
-            "next": 25,
-            "description": "11",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 12,
-            "type": "timer",
-            "parent": 10,
-            "next": null,
-            "description": "12",
-            "conditional": null,
-            "details": null
-        }
-
-        
-        ,
-        {
-            "id": 13,
-            "type": "conditional",
-            "parent": 9,
-            "next": null,
-            "description": null,
-            "conditional": [
-                14,15
-            ],
-            "details": null
-        },
-        {
-            "id": 14,
-            "type": "timer",
-            "parent": 13,
-            "next": null,
-            "description": "14",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 15,
-            "type": "timer",
-            "parent": 13,
-            "next": null,
-            "description": "15",
-            "conditional": null,
-            "details": null
-        }
 
 
-        
-        ,
-        {
-            "id": 16,
-            "type": "conditional",
-            "parent": 6,
-            "next": null,
-            "description": null,
-            "conditional": [
-                17,18
-            ],
-            "details": null
-        },
-        {
-            "id": 17,
-            "type": "timer",
-            "parent": 16,
-            "next": null,
-            "description": "17",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 18,
-            "type": "timer",
-            "parent": 16,
-            "next": 19,
-            "description": "18",
-            "conditional": null,
-            "details": null
-        }
-
-        
-        
-        ,
-        {
-            "id": 19,
-            "type": "conditional",
-            "parent": 18,
-            "next": null,
-            "description": null,
-            "conditional": [
-                20,21
-            ],
-            "details": null
-        },
-        {
-            "id": 20,
-            "type": "timer",
-            "parent": 19,
-            "next": null,
-            "description": "20",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 21,
-            "type": "timer",
-            "parent": 19,
-            "next": 22,
-            "description": "20",
-            "conditional": null,
-            "details": null
-        }
-
-        
-        ,
-        {
-            "id": 22,
-            "type": "conditional",
-            "parent": 21,
-            "next": null,
-            "description": null,
-            "conditional": [
-                23,24
-            ],
-            "details": null
-        },
-        {
-            "id": 23,
-            "type": "timer",
-            "parent": 22,
-            "next": null,
-            "description": "20",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 24,
-            "type": "timer",
-            "parent": 22,
-            "next": null,
-            "description": "20",
-            "conditional": null,
-            "details": null
-        }
 
 
-        ,
-        {
-            "id": 25,
-            "type": "conditional",
-            "parent": 17,
-            "next": null,
-            "description": null,
-            "conditional": [
-                26,27
-            ],
-            "details": null
-        },
-        {
-            "id": 26,
-            "type": "timer",
-            "parent": 25,
-            "next": null,
-            "description": "26",
-            "conditional": null,
-            "details": null
-        },
-        {
-            "id": 27,
-            "type": "timer",
-            "parent": 25,
-            "next": null,
-            "description": "27",
-            "conditional": null,
-            "details": null
-        }
 
     ]    
 }

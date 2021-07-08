@@ -1,51 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>POC</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
-<head>
-  <meta charset="utf-8">
-  <title>Icontact4you</title>
-  <base href="/">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
-  <!-- <link rel="stylesheet" href="../assets/css/dark-template.css" /> -->
-  <!-- <link rel="stylesheet" href="../assets/css/light-template.css" /> -->
-  <style>
-    :root {
-      --background: #343A40;
-      --secondary-background: #fff;
-      /* --bg-lightGray: #fff; */
-      --bg-lightGray: #1E2026;
-      --color: #ADB5BD;
-      --bg-mainBlue:#dfebff;
-      --border: #495057;
-      --text-gray: #7e96b8;
-      --text-blue:#59f;
-      --blackBlue:#191f2a;
-      --border-gray: #19CCA3;
-      --text-lightGray: #9cacc2;
-      --border-box:rgb(218 226 241 / 66%);
-      --border-box:none;
-      transform: scale(0.8);
-    }
+    <link rel="stylesheet" href="../assets/css/vendor.styles.css" />
 
-    body {
-      background-color: var(--bg-lightGray);
-      color: var(--color);
-    }
+    <link rel="stylesheet" href="../assets/css/dark-template.css" />
+    <!-- 
+      <link rel="stylesheet" href="../assets/css/light-template.css" />
+          
+    -->
 
-    .main-panel {
-      box-sizing: border-box;
-      position: relative;
-    }
-  </style>
+    <style>
+      :root {
+        --bg-body: #15202b;
+        /* 
+        --bg-body: #f4f7fd;
+        */
 
-</head>
+        /* --bg-body: #1e2026; */
+        --background: #343a40;
+        --secondary-background: #fff;
+        --color: #adb5bd;
+        --bg-mainBlue: #dfebff;
+        --border: #495057;
+        --text-gray: #7e96b8;
+        --text-blue: #59f;
+        --blackBlue: #191f2a;
+        --border-gray: #19cca3;
+        --text-lightGray: #9cacc2;
+        --border-box: rgb(218 226 241 / 66%);
+        --border-box: none;
+      }
 
-<body>
-  <div class="main-panel">
-    <app-root></app-root>
-  </div>
-</body>
+      body {
+        background-color: var(--bg-body);
+        color: var(--color);
+      }
+    </style>
 
+    <script src="/assets/js/vendor.base.js"></script>
+    <script src="/assets/js/vendor.bundle.js"></script>
+
+    <script src="/assets/js/components/modal.js"></script>
+  </head>
+
+  <body>
+    <div class="main-panel">
+      <app-root></app-root>
+    </div>
+  </body>
 </html>

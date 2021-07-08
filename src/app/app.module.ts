@@ -9,6 +9,9 @@ import { ActionEndComponent } from './workflow/workflow/action-end/action-end.co
 import { ActionStartComponent } from './workflow/workflow/action-start/action-start.component';
 import { ActionTimerComponent } from './workflow/workflow/action-timer/action-timer.component';
 import { WorkflowComponent } from './workflow/workflow/workflow.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { HeaderComponent } from './components/header/header.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { WorkflowComponent } from './workflow/workflow/workflow.component';
     ActionEmailComponent,
     ActionTimerComponent,
     ActionConditionalComponent,
-    ActionEndComponent
+    ActionEndComponent,
+    SidebarComponent,
+    HeaderComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

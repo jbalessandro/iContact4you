@@ -1,18 +1,12 @@
-.container{
-  position: relative;
-  // border: 1px solid red;
-  width: auto;
-}
-
 .box {
   width: max-content;
   margin: auto 50%;
   transform: translate(-50%);
-  background: #fff!important;
-  border: 2px solid #dae2f1!important;
-  color: var(--color)!important;
-  border-radius: 10px!important;
-  outline: none!important;
+  background: #fff !important;
+  border: 2px solid #dae2f1 !important;
+  color: var(--color) !important;
+  border-radius: 10px !important;
+  outline: none !important;
   padding: 14px 16px;
   box-shadow: 0 1px 4px 2px var(--border-box);
   position: static;
@@ -23,15 +17,15 @@
     left: 50%;
     height: 36px;
     width: 0;
-    top: calc(100% - 84px);
-    border-right: 1px solid var(--border-gray);
+    top: calc(100% - 90px);
+    border-right: 1px solid var(--color);
     border-left: 0 !important;
   }
-  .title{
+  .title {
     font-size: 16px;
     text-transform: uppercase;
   }
-  .content{
+  .content {
     font-size: 14px;
     color: var(--text-lightGray);
     text-transform: uppercase;
@@ -59,11 +53,49 @@
   line-height: 26px;
   border-radius: 50%;
   text-align: center;
-  border: 2px solid var(--border-gray)!important;
-  -webkit-box-shadow: 0 4px 4px 0 rgb(0 0 0 / 13%);
+  border: 2px solid var(--text-lightGray) !important;
   box-shadow: 0 1px 4px 2px var(--border-box);
-  // box-shadow: 0 1px 4px 2px rgb(218 226 241 / 66%);
   cursor: pointer;
+}
+
+.minibox {
+  position: relative;
+  border-radius: 5px;
+  padding: 2px;
+  text-align: center;
+  display: block;
+  max-width: 100px;
+
+  &.minibox--no {
+    color: #ea4335;
+    border: 1px solid #ea4335;
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      height: 36px;
+      width: 0;
+      top: calc(25px);
+      border-right: 1px solid var(--color);
+      border-left: 0 !important;
+    }
+  }
+  &.minibox--yes {
+    color: var(--border-gray);
+    border: 1px solid var(--border-gray);
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      left: 50%;
+      height: 36px;
+      width: 0;
+      top: calc(25px);
+      border-right: 1px solid var(--color);
+      border-left: 0 !important;
+    }
+  }
 }
 
 .pb {
@@ -74,17 +106,11 @@
   position: relative;
 }
 .plumbing {
-    height: 74px;
-    width: 260px;
-    top: 0;
-    position: relative;
-    .left {
-    //right: 50%;
-  }
-  .right {
-    //left: 50%;
-  }
-  svg path {
+  height: 100px;
+  width: 50%;
+  top: 0;
+  position: relative;
+  > svg path {
     vector-effect: non-scaling-stroke;
     fill: none;
     stroke-width: 1;
